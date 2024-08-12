@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <title>Encriptador</title>
+</head>
+
+<body>
+    <main>
+        <section class="logo-section">
+            <img class="logo" src="assets/Frame-6.png" alt="Alura Logo">
+        </section>
+        <section class="encrypt-section">
+            <textarea class="text-area" cols="30" rows="10" placeholder="Ingrese el texto aqui"></textarea>
+            <div class="advert">
+                <img class="logo-exclamation" src="assets/bi_exclamation-circle-fill.png" alt="Exclamation Logo">
+                <h6 class="information">Solo letras minúsculas y sin acentos</h6>
+            </div>
+            <div class="buttons">
+                <button class="encrypt-btn" onclick="btnEncrypt()">Encriptar</button>
+                <button class="decrypt-btn" onclick="btnDecrypt()">Desencriptar</button>
+            </div>
+        </section>
+        <section class="message-section">
+            <textarea class="message" cols="20" rows="10" readonly
+                placeholder="Ningún mensaje fue encontrado"></textarea>
+            <h6 class="additional-message">Ingresa el texto que desees encriptar o desencriptar</h6>
+            <div class="button-container">
+                <button class="copy-btn" onclick="copy()">Copiar</button>
+                <div id="popup" class="popup">*Texto copiado al portapapeles!</div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
