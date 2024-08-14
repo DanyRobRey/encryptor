@@ -5,24 +5,26 @@
     font-size: 32px;
     line-height: 150%;
     overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .logo {
     padding-top: 40px;
     margin-left: 40px;
     margin-right: 80px;
-    width: 40%;
+    width: 90px;
+    max-width: 100%;
 }
 
 .logo-section {
     align-items: center;
-    width: 12%;
+    width: auto;
 }
 
 main {
     display: flex;
     flex-direction: row;
-    height: 100vh;
+    height: auto;
 }
 
 .encrypt-section {
@@ -62,7 +64,7 @@ main {
     margin-left: 98px;
     margin-top: 20px;
     padding-left: 20px;
-    position: fixed;
+    position: absolute;
     height: 90%;
     resize: none;
     width: 400px;
@@ -71,6 +73,8 @@ main {
 .message::placeholder {
     color: #343A40;
     padding-top: 500px;
+    margin-left: 40px;
+    padding-left: 30px;
     text-align: center;
     font-family: 'Inter';
     font-weight: 700;
@@ -84,7 +88,6 @@ main {
     padding-top: 550px;
     padding-left: 160px;
     max-width: 300px;
-    word-wrap: break-word;
     font-family: 'Inter';
     font-weight: 400;
     font-size: 16px;
@@ -103,6 +106,7 @@ main {
     margin-bottom: 72px;
     flex-direction: row;
     justify-content: space-between;
+    gap: 24px;
 }
 
 .advert {
@@ -113,7 +117,7 @@ main {
 .logo-exclamation {
     height: 16px;
     width: 16px;
-    padding-top: 127px;
+    padding-top: 237px;
 }
 
 .encrypt-btn {
@@ -152,9 +156,9 @@ main {
     cursor: pointer;
     height: 67px;
     z-index: 2;
-    position: relative;
+    position: absolute;
     margin-left: 140px;
-    margin-top: 115px;
+    margin-top: 210px;
     width: 336px;
     font-family: 'Inter';
     font-weight: 400;
@@ -170,15 +174,15 @@ main {
     font-weight: 400;
     font-size: 12px;
     line-height: 150%;
-    padding-top: 100px;
+    padding-top: 210px;
     margin-left: 8px;
 }
 
 .popup {
     display: none;
-    position: relative;
+    position: absolute;
     margin-left: 140px;
-    margin-top: 10px;
+    margin-top: 170px;
     background-color: transparent;
     padding: 10px;
     border-radius: 5px;
@@ -189,4 +193,158 @@ main {
     font-weight: 400;
     font-size: 12px;
     line-height: 150%;
+}
+
+@media (max-width: 768px) {
+    * {
+        overflow-y: auto;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    .logo {
+        margin-left: 25px;
+    }
+
+    .text-area {
+        width: auto;
+        height: 400px;
+        margin-top: 168px;
+        margin-right: 40px;
+    }
+
+    .encrypt-section,
+    .message-section {
+        width: auto;
+        margin-left: 60px;
+    }
+
+    .buttons {
+        margin-right: 40px;
+    }
+
+    .message-section{
+        box-sizing: border-box;
+    }
+
+    .message {
+        margin-top: 0px;
+        width: 400px;
+        height: 133px;
+        margin-left: 0px;
+        background-image: none;
+        padding-right: 100px;
+        margin-right: 500px;
+    }
+
+    .message::placeholder {
+        padding-top: 10px;
+        padding-left: 120px;
+        font-size: 24px;
+    }
+
+    .additional-message {
+        padding-top: 50px;
+        padding-left: 120px;
+        position: relative;
+    }
+
+    .copy-btn {
+        margin-top: 10px;
+        margin-left: 2%;
+        width: 500px;
+    }
+
+    .logo-exclamation {
+        padding-top: 37px;
+    }
+
+    .information {
+        padding-top: 10px;
+    }
+}
+
+@media (max-width: 430px) {
+    * {
+        overflow-y: auto;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    .logo {
+        margin-left: 25px;
+    }
+
+    .text-area {
+        width: auto;
+        height: 400px;
+        margin-top: 168px;
+        margin-right: 40px;
+    }
+
+    .encrypt-section,
+    .message-section {
+        width: auto;
+        margin-left: 60px;
+    }
+
+    .buttons {
+        margin-right: 40px;
+        flex-direction: column;
+    }
+
+    .message-section{
+        box-sizing: border-box;
+    }
+
+    .message {
+        margin-top: 0px;
+        width: 160px;
+        height: 133px;
+        background-image: none;
+    }
+
+    .message::placeholder {
+        padding-top: 10px;
+        padding-left: 120px;
+        font-size: 5px;
+        font-size: 20px;
+        opacity: 0;
+    }
+
+    .additional-message {
+        padding-top: 15px;
+        padding-left: 0%;
+        position: relative;
+        font-size: 14px;
+    }
+
+    .copy-btn {
+        margin-top: 10px;
+        margin-left: 2%;
+        width: 240px;
+    }
+
+    .logo-exclamation {
+        padding-top: 37px;
+    }
+
+    .information {
+        padding-top: 10px;
+    }
+
+    .encrypt-btn {
+        height: 67px;
+        width: 280px;
+    }
+    
+    .decrypt-btn {
+        height: 67px;
+        width: 280px;
+    }
+
 }

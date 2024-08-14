@@ -13,6 +13,11 @@ const matrixCode = [
     ["u", "ufat"]
 ];
 
+function countCharacters(text) {
+    return text.length;
+}
+
+
 function btnEncrypt() {
     if (textArea.value != "") {
         const encryptedText = encrypt(textArea.value);
@@ -21,11 +26,27 @@ function btnEncrypt() {
         message.style.backgroundImage = "none";
         additionalMessage.textContent = "";
         copyButton.style.display = 'block';
+        if (window.innerWidth > 430 && window.innerWidth <= 768) {
+            const charCount = countCharacters(encryptedText);
+            const height = Math.max(200, charCount * 2.6);
+            message.style.height = `${height}px`;
+            copyButton.style.marginTop = `${height-190}px`; 
+        }
+        if (window.innerWidth <= 430) {
+            const charCount = countCharacters(encryptedText);
+            const height = Math.max(300, charCount * 7);
+            message.style.height = `${height}px`;
+            copyButton.style.marginTop = `${height-190}px`; 
+        }
+        
     } else {
         message.value = originalMessage.value;
         message.style.backgroundImage = originalMessage.style.backgroundImage;
         additionalMessage.textContent = oriAdditionalMessage.textContent;
         copyButton.style.display = 'none';
+        if (window.innerWidth <= 768) {
+            message.style.height = "133px";
+        }
     }
 }
 
@@ -37,11 +58,26 @@ function btnDecrypt() {
         message.style.backgroundImage = "none";
         additionalMessage.textContent = "";
         copyButton.style.display = 'block';
+        if (window.innerWidth > 430 && window.innerWidth <= 768) {
+            const charCount = countCharacters(encryptedText);
+            const height = Math.max(200, charCount * 2.6);
+            message.style.height = `${height}px`;
+            copyButton.style.marginTop = `${height-190}px`; 
+        }
+        if (window.innerWidth <= 430) {
+            const charCount = countCharacters(encryptedText);
+            const height = Math.max(300, charCount * 7);
+            message.style.height = `${height}px`;
+            copyButton.style.marginTop = `${height-190}px`; 
+        }
     } else {
         message.value = originalMessage.value;
         message.style.backgroundImage = originalMessage.style.backgroundImage;
         additionalMessage.textContent = oriAdditionalMessage.textContent;
         copyButton.style.display = 'none';
+        if (window.innerWidth <= 768) {
+            message.style.height = "133px";
+        }
     }
 }
 
@@ -52,12 +88,14 @@ function copy() {
     tempInput.select();
     document.execCommand("copy");
     document.body.removeChild(tempInput);
-    var popup = document.getElementById("popup");
-    popup.style.display = "block";
+    if (window.innerWidth > 768) {
+        var popup = document.getElementById("popup");
+        popup.style.display = "block";
 
-    setTimeout(function () {
-        popup.style.display = "none";
-    }, 1000);
+        setTimeout(function () {
+            popup.style.display = "none";
+        }, 1000);
+    }
 }
 
 function encrypt(data) {
